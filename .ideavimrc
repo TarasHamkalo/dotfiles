@@ -1,0 +1,134 @@
+set idearefactormode=keep
+set ideajoin
+set surround
+set easymotion
+set ideastatusicon=gray
+
+set showmode
+"set ReplaceWithRegister
+set clipboard=unnamedplus
+set nocompatible
+set scrolloff=10
+set number
+set relativenumber
+set mousehide
+set incsearch
+set ignorecase
+set smartcase
+set noerrorbells 
+set belloff=all
+set visualbell
+
+let mapleader = " "
+" Leader mapping
+map <leader>ff :action GotoFile<CR>
+map <leader>fr :action RecentFiles<CR>
+map <leader>fa :action GotoAction<CR>
+map <leader>rn :action RenameElement<CR>
+map <leader>t :action ActivateTerminalToolWindow<CR>
+
+nmap <leader>s :action Stop<CR>
+nmap <leader>b :action ToggleLineBreakpoint<CR>
+nmap <leader>v <c-v>
+nmap <leader>n :action Generate<CR>
+nmap <leader>m :action Git.Menu<CR>
+nmap <leader>/ :action ShowErrorDescription<CR>
+nmap <leader>e :action GotoNextError<CR>
+nmap <leader>. :action TabShiftActions.ShiftRight<CR>
+nmap <leader>, :action TabShiftActions.ShiftLeft<CR>
+
+"Default mapping
+nmap <c-h> <c-w>h
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-l> <c-w>l
+nmap <c-]> :action TabShiftActions.StretchRight<CR>
+nmap <c-[> :action TabShiftActions.StretchLeft<CR>
+nnoremap <s-Tab> :action PreviousTab<CR>
+nnoremap <Tab> :action NextTab<CR>
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+nnoremap n nzz
+nnoremap N Nzz
+
+map gD :action GotoTypeDeclaration<CR>
+map gd :action GotoDeclaration<CR>
+map gi :action GotoImplementation<CR>
+map gs :action GotoSuperMethod<CR>
+" Motion mapping
+" below/forward cursor
+nmap <leader>f <Plug>(easymotion-f)
+" whole
+nmap <leader>F <Plug>(easymotion-s)
+
+" Unused mapping / props
+" nmap <leader>sb :action ViewBreakpoints<CR>
+" shift-k -> map <leader>q :action QuickJavaDoc<CR>
+" nmap <leader>h :action PreviousTab<CR>
+" nmap <leader>l :action NextTab<CR>
+" nmap <leader>p :action FindInPath<CR>
+
+" nnoremap <C-j> :m +1<CR>
+" nnoremap <C-k> :m -2<CR>
+" inoremap <C-j> <Esc>:m +1<CR>gi
+" inoremap <C-k> <Esc>:m -2<CR>gi
+
+" set shiftround
+" set backspace=indent,eol,start
+" set mouse=a
+" set showmode
+" set nocp
+" set belloff=all
+" set visualbell
+" set tabstop=4
+" set shiftwidth=4
+" set smarttab
+" set noexpandtab
+" set t_Co=256
+
+" Plugins
+" Yank
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+" File tree
+Plug 'preservim/nerdtree'
+" Bracket replace
+Plug 'tpope/vim-surround'
+" Some motion
+Plug 'easymotion/vim-easymotion'
+
+" Input handlers
+sethandler <S-Tab> a:vim
+sethandler <C-2> a:ide
+sethandler <C-S-2> a:ide
+sethandler <C-6> a:ide
+sethandler <C-S-6> a:ide
+sethandler <C-;> a:vim
+sethandler <C-S-;> a:vim
+sethandler <C-A> a:ide
+sethandler <C-B> a:ide
+sethandler <C-C> a:ide
+sethandler <C-D> a:vim
+sethandler <C-E> a:ide
+sethandler <C-F> a:ide
+sethandler <C-G> a:vim
+sethandler <C-H> a:vim
+sethandler <C-I> a:vim
+sethandler <C-K> a:ide
+sethandler <C-L> a:vim
+sethandler <C-M> a:vim
+sethandler <C-N> a:vim
+sethandler <C-O> a:vim
+sethandler <C-P> a:vim
+sethandler <C-Q> a:ide
+sethandler <C-R> a:vim
+sethandler <C-S> a:vim
+sethandler <C-T> a:ide
+sethandler <C-U> a:vim
+sethandler <C-V> a:ide
+sethandler <C-W> a:vim
+sethandler <C-X> a:vim
+sethandler <C-[> a:vim
+sethandler <C-\> a:vim
+sethandler <C-]> a:vim
