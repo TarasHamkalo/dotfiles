@@ -1,4 +1,3 @@
-
 ('nvim-treesitter.configs').setup {
   -- Needed parsers
   ensure_installed = {

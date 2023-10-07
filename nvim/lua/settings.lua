@@ -1,15 +1,20 @@
-require "helpers/globals"
+require("helpers/globals")
 
 -- Set associating between turned on plugins and filetype
-cmd[[filetype plugin on]]
+cmd([[filetype plugin on]])
 
 -- Disable comments on pressing Enter
-cmd[[autocmd FileType * setlocal formatoptions-=cro]]
+cmd([[autocmd FileType * setlocal formatoptions-=cro]])
 
+-- FileTypes
+cmd([[autocmd BufRead,BufNewFile *.c,*.h set filetype=c]])
 
+-- No swap
+vim.opt.swapfile = false
 -- Current line
 opt.cursorline = true
--- Column wrap 
+
+-- Column wrap
 opt.colorcolumn = "100"
 opt.compatible = false
 
@@ -24,45 +29,45 @@ opt.relativenumber = true
 -- opt.mousehide = true
 
 -- long lines
-opt.wrap = false 
+opt.wrap = false
 
 -- some colors
 opt.termguicolors = true
 
 -- show sign column so that text doesn't shift
-opt.signcolumn = "yes" 
+opt.signcolumn = "yes"
 
 -- Disable error bells
 opt.errorbells = false
 
 -- Turn off all bells
-opt.visualbell = false 
+opt.visualbell = false
 
 -- NO FOLDS
 vim.wo.foldenable = false
--- Tabs 
+-- Tabs
 opt.expandtab = false
-opt.shiftwidth = 4 
-opt.tabstop = 4 
-opt.smartindent = true              
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.smartindent = true
 
--- Clipboard 
+-- Clipboard
 opt.clipboard = "unnamedplus"
-opt.fixeol = false 
+opt.fixeol = false
 
 -- Folding
 -- opt.foldmethod = 'syntax'
 
 -- Search
-opt.ignorecase = true            
+opt.ignorecase = true
 opt.incsearch = true
-opt.joinspaces = false            
-opt.smartcase = true               
-opt.showmatch = true                
+opt.joinspaces = false
+opt.smartcase = true
+opt.showmatch = true
 
 -- Window
-opt.splitbelow = true           
-opt.splitright = true          
+opt.splitbelow = true
+opt.splitright = true
 
 -- Wild Menu
 opt.wildmenu = true
@@ -70,26 +75,26 @@ opt.wildmode = "longest:full,full"
 
 -- Default Plugins {{{
 local disabled_built_ins = {
-    --"netrw",
-    --"netrwPlugin",
-    --"netrwSettings",
-    --"netrwFileHandlers",
-    "gzip",
-    "zip",
-    "zipPlugin",
-    "tar",
-    "tarPlugin",
-    "getscript",
-    "getscriptPlugin",
-    "vimball",
-    "vimballPlugin",
-    "2html_plugin",
-    "logipat",
-    "rrhelper",
-    "spellfile_plugin",
-    "matchit"
+	--"netrw",
+	--"netrwPlugin",
+	--"netrwSettings",
+	--"netrwFileHandlers",
+	"gzip",
+	"zip",
+	"zipPlugin",
+	"tar",
+	"tarPlugin",
+	"getscript",
+	"getscriptPlugin",
+	"vimball",
+	"vimballPlugin",
+	"2html_plugin",
+	"logipat",
+	"rrhelper",
+	"spellfile_plugin",
+	"matchit",
 }
 
 for _, plugin in pairs(disabled_built_ins) do
-    g["loaded_" .. plugin] = 1
+	g["loaded_" .. plugin] = 1
 end

@@ -1,10 +1,7 @@
-local configs = require("nvim-treesitter.configs")
-
-configs.setup({
+("nvim-treesitter.configs").setup({
+	-- Needed parsers
 	ensure_installed = {
-		"markdown",
 		"lua",
-		"vim",
 		"c",
 		"java",
 	},
