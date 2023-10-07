@@ -13,31 +13,31 @@ local on_attach = function(client, bufnr)
 
   -- set keybinds
   opts.desc = "Go to declaration"
-  nmap("gd", vim.lsp.buf.declaration, opts) -- go to declaration
+  keymap("n", "gd", vim.lsp.buf.declaration, opts) -- go to declaration
 
   opts.desc = "Show LSP type definitions"
-  nmap("gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+  keymap("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
 
   opts.desc = "Show LSP implementations"
-  nmap("gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+  keymap("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
 
   opts.desc = "See available code actions"
   keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
   opts.desc = "Smart rename"
-  nmap("<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
+  keymap("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
   opts.desc = "Show line diagnostics"
-  nmap("<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+  keymap("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
   opts.desc = "Go to previous diagnostic"
-  nmap("[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+  keymap("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
 
   opts.desc = "Go to next diagnostic"
-  nmap("]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+  keymap("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
 
   opts.desc = "Show documentation for what is under cursor"
-  nmap("K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+  keymap("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
 end
 
