@@ -3,7 +3,7 @@ require("helpers.mapping-functions")
 
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
-local cmd_ui = require("harpoon.cmd-ui")
+
 vim.keymap.set("n", "<leader>a", mark.add_file)
 vim.keymap.set("n", "<leader>h", ui.toggle_quick_menu)
 -- nmap("", ui.toggle_quick_menu)

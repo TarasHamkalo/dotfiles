@@ -7,7 +7,7 @@ require("gruvbox").setup({
 })
 
 function Draw(color)
-	color = color or "rose-pinee"
+	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

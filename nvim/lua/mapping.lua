@@ -32,8 +32,3 @@ nmap("<c-u>", "<c-u>zz")
 nmap("<c-d>", "<c-d>zz")
 nmap("n", "nzz")
 nmap("N", "Nzz")
-
--- BIN
--- nmap('gd', '<cmd>Telescope lsp_definitions<CR>')                            -- Goto declaration
---nm('<leader>p', '<cmd>Telescope oldfiles<CR>')                                   -- Show recent files
---nm('<leader>O', '<cmd>Telescope git_files<CR>')                                  -- Search for a file in project
