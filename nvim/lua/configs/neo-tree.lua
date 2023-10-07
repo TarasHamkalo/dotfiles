@@ -12,6 +12,7 @@ neotree.setup({
     width = 50,
     mappings = {
       ["o"] = "open",
+	  ["/"] = "",
     }
   },
 

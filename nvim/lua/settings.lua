@@ -7,8 +7,12 @@ cmd[[filetype plugin on]]
 cmd[[autocmd FileType * setlocal formatoptions-=cro]]
 
 
+-- Current line
+opt.cursorline = true
+-- Column wrap 
+opt.colorcolumn = "100"
 opt.compatible = false
-opt.confirm = true 
+
 -- Set scrolloff to 10 lines
 opt.scrolloff = 10
 
@@ -18,6 +22,15 @@ opt.relativenumber = true
 
 --(DEFAULT FOR NVIM) Hide the mouse cursor while typing
 -- opt.mousehide = true
+
+-- long lines
+opt.wrap = false 
+
+-- some colors
+opt.termguicolors = true
+
+-- show sign column so that text doesn't shift
+opt.signcolumn = "yes" 
 
 -- Disable error bells
 opt.errorbells = false
@@ -34,7 +47,7 @@ opt.tabstop = 4
 opt.smartindent = true              
 
 -- Clipboard 
-opt.clipboard = 'unnamedplus'
+opt.clipboard = "unnamedplus"
 opt.fixeol = false 
 
 -- Folding

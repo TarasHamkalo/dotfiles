@@ -16,31 +16,32 @@ nmap('gd', '<cmd>Telescope lsp_definitions<CR>')                            -- G
 nmap('<leader>ff', '<cmd>Telescope find_files<CR>')                                 -- Search for a file (ignoring git-ignore)
 nmap('<leader>gb', '<cmd>Telescope git_branches<CR>')                               -- Show git branches
 nmap('<leader>fw', '<cmd>Telescope live_grep<CR>')                                  -- Find a string in project
-nmap('<leader>fb', '<cmd>Telescope buffers<CR>')                                    -- Show all buffers
+nmap('<leader>fr', '<cmd>Telescope buffers<CR>')                                    -- Show all buffers
 nmap('<leader>ot', '<cmd>Telescope<CR>')                                            -- Show all commands
 --nm('<leader>t', '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>')              -- Search for dynamic symbols
---
-
--- Trouble {{{
---nm('<leader>x', '<cmd>TroubleToggle<CR>')                                         -- Show all problems in project (with help of LSP)
---nm('gr', '<cmd>Trouble lsp_references<CR>')                                       -- Show use of object in project
--- }}}
 
 -- Neo Tree 
 nmap('<leader>n', '<cmd>Neotree toggle<CR>')                                        -- Toggle file explorer
 -- 
 
 -- Vim 
+-- Noh search after ESC
+nmap('<ESC>', '<ESC><cmd>noh<CR>')
+
+-- Splits
 nmap('<c-h>', '<c-w>h')
 nmap('<c-j>', '<c-w>j')
 nmap('<c-k>', '<c-w>k')
 nmap('<c-l>', '<c-w>l')
+nmap('<c-[>', '<cmd>vertical resize -10<CR>')
+nmap('<c-]>', '<cmd>vertical resize +10<CR>')
+
+-- Center screen
 nmap('<c-u>', '<c-u>zz')
 nmap('<c-d>', '<c-d>zz')
 nmap('n', 'nzz')
 nmap('N', 'Nzz')
+--
 
---nmap <c-]> :action TabShiftActions.StretchRight<CR>
---nmap <c-[> :action TabShiftActions.StretchLeft<CR>
 --nnoremap <s-Tab> :action PreviousTab<CR>
 --nnoremap <Tab> :action NextTab<CR>
