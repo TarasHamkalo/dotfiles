@@ -31,8 +31,22 @@ return {
 
 			-- setup formatters & linters
 			sources = {
-				--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
+				null_ls.builtins.formatting.prettier.with({
+					filetypes = {
+						"c", "java", "css", "html", "json",
+					},
 
+					extra_args = function(params)
+						return params.options
+							and params.options.tabSize
+							and {
+								"--tab-width",
+								params.options.tabSize,
+							}
+					end,
+				}),
+
+				formatting.prettier,
 				formatting.stylua, -- lua formatter
 			},
 		})

@@ -3,8 +3,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
-	config = function(_) 
+	config = function(_)
 		require("configs.harpoon")
 	end
 }
-
