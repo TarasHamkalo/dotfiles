@@ -16,7 +16,9 @@ return {
 		mason_null_ls.setup({
 			ensure_installed = {
 				"prettier", -- prettier formatter
+				"prettierd", -- prettier formatter
 				"stylua", -- lua formatter
+				"clang_format",
 			},
 		})
 
@@ -33,14 +35,17 @@ return {
 			sources = {
 				null_ls.builtins.formatting.prettier.with({
 					filetypes = {
-						"java", "css", "html", "json",
+						"c", "java", "css", "html", "json",
 					},
-					-- "c", 
-					extra_args = { "--tab-width 4", "--config \"../../utils/.prettierrc.json\"" },
+
+					env = {
+						PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("../../utils/.prettierrc.json"),
+					},
 				}),
 
-				-- formatting.prettier,
-				-- formatting.stylua, -- lua formatter
+				formatting.prettier,
+				formatting.clang_format,
+				formatting.stylua, -- lua formatter
 			},
 		})
 	end,

@@ -70,7 +70,10 @@ opt.ignorecase = true
 opt.incsearch = true
 opt.joinspaces = false
 opt.smartcase = true
+
+-- Braces
 opt.showmatch = true
+opt.matchtime = 1
 
 -- Window
 opt.splitbelow = true
