@@ -53,7 +53,7 @@ opt.visualbell = false
 -- NO FOLDS
 vim.wo.foldenable = false
 -- Tabs
-opt.expandtab = false
+opt.expandtab = true
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.smartindent = true
@@ -85,26 +85,26 @@ opt.wildmode = "longest:full,full"
 
 -- Default Plugins {{{
 local disabled_built_ins = {
-	--"netrw",
-	--"netrwPlugin",
-	--"netrwSettings",
-	--"netrwFileHandlers",
-	"gzip",
-	"zip",
-	"zipPlugin",
-	"tar",
-	"tarPlugin",
-	"getscript",
-	"getscriptPlugin",
-	"vimball",
-	"vimballPlugin",
-	"2html_plugin",
-	"logipat",
-	"rrhelper",
-	"spellfile_plugin",
-	"matchit",
+    --"netrw",
+    --"netrwPlugin",
+    --"netrwSettings",
+    --"netrwFileHandlers",
+    "gzip",
+    "zip",
+    "zipPlugin",
+    "tar",
+    "tarPlugin",
+    "getscript",
+    "getscriptPlugin",
+    "vimball",
+    "vimballPlugin",
+    "2html_plugin",
+    "logipat",
+    "rrhelper",
+    "spellfile_plugin",
+    "matchit",
 }
 
 for _, plugin in pairs(disabled_built_ins) do
-	g["loaded_" .. plugin] = 1
+    g["loaded_" .. plugin] = 1
 end
