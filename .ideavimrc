@@ -21,19 +21,26 @@ set visualbell
 
 let mapleader = " "
 " Leader mapping
+map <leader>ca :action ShowIntentionActions<CR>
 map <leader>ff :action GotoFile<CR>
 map <leader>fr :action RecentFiles<CR>
 map <leader>fa :action GotoAction<CR>
 map <leader>rn :action RenameElement<CR>
 map <leader>t :action ActivateTerminalToolWindow<CR>
 
+map <leader>jev :action IntroduceVariable<CR>
+map <leader>jec :action IntroduceConstant<CR>
+map <leader>jem :action ExtractMethod<CR>
+map  <leader>de :action EvaluateExpression<CR> 
+nmap <leader>lf :action ReformatCode<CR>
+nmap <leader>ca :action ShowIntentionActions<CR>
+nmap <leader>rm :action CloseAllEditorsButActive<CR>
 nmap <leader>s :action Stop<CR>
-nmap <leader>b :action ToggleLineBreakpoint<CR>
+nmap <leader>db :action ToggleLineBreakpoint<CR>
 nmap <leader>v <c-v>
-nmap <leader>n :action Generate<CR>
+nmap <leader>g :action Generate<CR>
 nmap <leader>m :action Git.Menu<CR>
 nmap <leader>/ :action ShowErrorDescription<CR>
-nmap <leader>e :action GotoNextError<CR>
 nmap <leader>. :action TabShiftActions.ShiftRight<CR>
 nmap <leader>, :action TabShiftActions.ShiftLeft<CR>
 
@@ -42,6 +49,8 @@ nmap <c-h> <c-w>h
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
+nmap [d :action GotoPreviousError<CR>
+nmap ]d :action GotoNextError<CR>
 nmap <c-]> :action TabShiftActions.StretchRight<CR>
 nmap <c-[> :action TabShiftActions.StretchLeft<CR>
 nnoremap <s-Tab> :action PreviousTab<CR>
@@ -51,15 +60,18 @@ nnoremap <C-d> <C-d>zz
 nnoremap n nzz
 nnoremap N Nzz
 
-map gD :action GotoTypeDeclaration<CR>
+map gt :action GotoTypeDeclaration<CR>
 map gd :action GotoDeclaration<CR>
 map gi :action GotoImplementation<CR>
 map gs :action GotoSuperMethod<CR>
+
+
+
 " Motion mapping
 " below/forward cursor
-nmap <leader>f <Plug>(easymotion-f)
+nmap <leader>j <Plug>(easymotion-f)
 " whole
-nmap <leader>F <Plug>(easymotion-s)
+nmap <leader>k <Plug>(easymotion-s)
 
 " Unused mapping / props
 " nmap <leader>sb :action ViewBreakpoints<CR>
@@ -106,7 +118,7 @@ sethandler <C-6> a:ide
 sethandler <C-S-6> a:ide
 sethandler <C-;> a:vim
 sethandler <C-S-;> a:vim
-sethandler <C-A> a:ide
+sethandler <C-A> a:vim
 sethandler <C-B> a:ide
 sethandler <C-C> a:ide
 sethandler <C-D> a:vim
@@ -126,9 +138,10 @@ sethandler <C-R> a:vim
 sethandler <C-S> a:vim
 sethandler <C-T> a:ide
 sethandler <C-U> a:vim
-sethandler <C-V> a:ide
+sethandler <C-V> a:vim
 sethandler <C-W> a:vim
 sethandler <C-X> a:vim
 sethandler <C-[> a:vim
 sethandler <C-\> a:vim
 sethandler <C-]> a:vim
+ethandler <C-]> a:vim
