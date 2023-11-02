@@ -4,6 +4,7 @@ export ZSH=$HOME/.config/zsh
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
+alias ls="ls --color=auto"
 alias ll="ls -al"
 
 ### ---- Env -------------------------------------
@@ -18,6 +19,9 @@ HISTFILE=~/.zsh_history
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 
+### ---- zsh options -------------------------------------
+setopt autocd
+
 ### ---- PLUGINS & THEMES -----------------------------------
 source $ZSH/custom/themes/spaceship-prompt/spaceship.zsh-theme
 source $ZSH/custom/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
@@ -26,11 +30,11 @@ fpath=($ZSH/custom/plugins/zsh-completions/src $fpath)
 
 ### --- Spaceship Config -----------------------------------
 SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
+  # user          # Username section
   dir           # Current directory section
-  host          # Hostname section
+  # host          # Hostname section
   git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
+  # hg            # Mercurial section (hg_branch  + hg_status)
   exec_time     # Execution time
   line_sep      # Line break
   # vi_mode       # Vi-mode indicator
@@ -39,7 +43,8 @@ SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
 )
 
-SPACESHIP_USER_SHOW=always
+# SPACESHIP_USER_SHOW=always
+# SPACESHIP_PROMPT_SYMBOL=''
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
