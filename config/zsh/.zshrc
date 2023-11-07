@@ -4,13 +4,23 @@ export ZSH=$HOME/.config/zsh
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
+
+alias la='ls -A'
 alias ls="ls --color=auto"
-alias ll="ls -al"
+alias ll="ls -alF"
+alias l='ls -CF'
+
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
 
 ### ---- Env -------------------------------------
 path+=("$HOME/.jdks/temurin-17.0.9/bin")
 export PATH
 export GIT_EDITOR=$VIM
+export CC=gcc
+export LDLIBS="-lm"
+export LDFLAGF="-std=c11 -Wall -Werror"
 
 ### ---- history config -------------------------------------
 HISTSIZE=10000
