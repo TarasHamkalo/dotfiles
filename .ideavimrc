@@ -28,27 +28,43 @@ map <leader>fa :action GotoAction<CR>
 map <leader>rn :action RenameElement<CR>
 map <leader>t :action ActivateTerminalToolWindow<CR>
 
+"map <leader>n :action ActivateProjectToolWindow<CR>
 map <leader>jev :action IntroduceVariable<CR>
 map <leader>jec :action IntroduceConstant<CR>
 map <leader>jem :action ExtractMethod<CR>
-map  <leader>de :action EvaluateExpression<CR> 
+map <leader>jef :action IntroduceField<CR>
+map <leader>jep :action IntroduceParameter<CR>
+
+map <leader>de :action EvaluateExpression<CR>
 nmap <leader>lf :action ReformatCode<CR>
 nmap <leader>ca :action ShowIntentionActions<CR>
 nmap <leader>rm :action CloseAllEditorsButActive<CR>
 nmap <leader>s :action Stop<CR>
 nmap <leader>db :action ToggleLineBreakpoint<CR>
-nmap <leader>v <c-v>
 nmap <leader>g :action Generate<CR>
 nmap <leader>m :action Git.Menu<CR>
 nmap <leader>/ :action ShowErrorDescription<CR>
-nmap <leader>. :action TabShiftActions.ShiftRight<CR>
-nmap <leader>, :action TabShiftActions.ShiftLeft<CR>
+" nmap <leader>. :action TabShiftActions.ShiftRight<CR>
+" nmap <leader>, :action TabShiftActions.ShiftLeft<CR>
 
-"Default mapping
-nmap <c-h> <c-w>h
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
-nmap <c-l> <c-w>l
+" Default mapping
+
+nmap ss :split<CR>
+nmap sv :vsplit<CR>
+
+" Splits width
+" decrement
+nmap <C-h> :action StretchSplitToLeft<CR>
+" increment
+nmap <C-l> :action StretchSplitToRight<CR>
+" Split height
+nmap <C-k> :action StretchSplitToTop<CR>
+nmap <C-j> :action StretchSplitToBottom<CR>
+nmap sh <c-w>h
+nmap sj <c-w>j
+nmap sk <c-w>k
+nmap sl <c-w>l
+
 nmap [d :action GotoPreviousError<CR>
 nmap ]d :action GotoNextError<CR>
 nmap <c-]> :action TabShiftActions.StretchRight<CR>
@@ -64,8 +80,6 @@ map gt :action GotoTypeDeclaration<CR>
 map gd :action GotoDeclaration<CR>
 map gi :action GotoImplementation<CR>
 map gs :action GotoSuperMethod<CR>
-
-
 
 " Motion mapping
 " below/forward cursor
@@ -127,7 +141,8 @@ sethandler <C-F> a:ide
 sethandler <C-G> a:vim
 sethandler <C-H> a:vim
 sethandler <C-I> a:vim
-sethandler <C-K> a:ide
+sethandler <C-K> a:vim
+sethandler <C-J> a:vim
 sethandler <C-L> a:vim
 sethandler <C-M> a:vim
 sethandler <C-N> a:vim
@@ -144,4 +159,3 @@ sethandler <C-X> a:vim
 sethandler <C-[> a:vim
 sethandler <C-\> a:vim
 sethandler <C-]> a:vim
-ethandler <C-]> a:vim
