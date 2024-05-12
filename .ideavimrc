@@ -36,6 +36,7 @@ map <leader>jef :action IntroduceField<CR>
 map <leader>jep :action IntroduceParameter<CR>
 
 map <leader>de :action EvaluateExpression<CR>
+nmap <leader>li :action OptimizeImports<CR>
 nmap <leader>lf :action ReformatCode<CR>
 nmap <leader>ca :action ShowIntentionActions<CR>
 nmap <leader>rm :action CloseAllEditorsButActive<CR>
@@ -76,16 +77,17 @@ nnoremap <C-d> <C-d>zz
 nnoremap n nzz
 nnoremap N Nzz
 
-map gt :action GotoTypeDeclaration<CR>
+map gD :action GotoTypeDeclaration<CR>
 map gd :action GotoDeclaration<CR>
 map gi :action GotoImplementation<CR>
 map gs :action GotoSuperMethod<CR>
+map gt :action GotoTest<CR>
 
 " Motion mapping
 " below/forward cursor
-nmap <leader>j <Plug>(easymotion-f)
+"nmap <leader>j <Plug>(easymotion-f)
 " whole
-nmap <leader>k <Plug>(easymotion-s)
+"nmap <leader>k <Plug>(easymotion-s)
 
 " Unused mapping / props
 " nmap <leader>sb :action ViewBreakpoints<CR>
