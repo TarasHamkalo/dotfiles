@@ -1,0 +1,2 @@
+#!/bin/zsh
+nvim -c "Man $1 $2" -c 'silent only' -c 'set path+=/usr/include/x86_64-linux-gnu/bits/types,/usr/include/x86_64-linux-gnu/,/usr/include/x86_64-linux-gnu/sys,/usr/include/bits,/usr/include'
