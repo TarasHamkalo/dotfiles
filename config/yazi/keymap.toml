@@ -1,0 +1,16 @@
+"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+
+[[manager.prepend_keymap]]
+on   = "T"
+run  = 'shell "$SHELL" --block --orphan --confirm'
+desc = "Open shell here"
+
+[[manager.prepend_keymap]]
+on   = "P"
+run  = "plugin --sync max-preview"
+desc = "Maximize or restore preview"
+
+[[manager.prepend_keymap]]
+on   = "L"
+run  = "plugin --sync open-detatch"
+desc = "Open detatched"

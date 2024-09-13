@@ -16,9 +16,13 @@ alias egrep="egrep --color=auto"
 
 alias gpa="git add .; git commit -m "#"; git push;"
 alias sapu="sudo apt update -y;  sudo apt upgrade -y; exit"
+
+alias cd="z"
+
 ### ---- Env -------------------------------------
 # export PATH="/home/taras/miniconda3/bin:$PATH"  # commented out by conda initialize
-# export TERM=alacritty
+export PATH="/home/taras/.local/bin:$PATH"
+
 export GIT_EDITOR=nvim
 export CC=gcc
 export LDLIBS="-lm"
@@ -71,6 +75,18 @@ SPACESHIP_CONDA_SHOW=true
 ### --- Binding -----------------------------------
 bindkey '' autosuggest-accept
 
+### --- Functions -----------------------------------
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+### --- Init -----------------------------------
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/taras/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -85,6 +101,8 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+eval "$(zoxide init zsh)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
