@@ -9,13 +9,26 @@ set smartcase
 set noerrorbells 
 set belloff=all
 set visualbell
+set clipboard=unnamedplus
 
 "Default mapping
-nmap <c-h> <c-w>h
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
-nmap <c-l> <c-w>l
+
+"Splits
+nmap sh <c-w>h
+nmap sj <c-w>j
+nmap sk <c-w>k
+nmap sl <c-w>l
+nmap <c-h> <C-w><
+nmap <c-l> <C-w>>
+nmap <c-k> <C-w>+
+nmap <c-j> <C-w>-
+
+nmap ss :split<Return>
+nmap sv :vsplit<Return>
+
+"Centering
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 nnoremap n nzz
 nnoremap N Nzz
+
