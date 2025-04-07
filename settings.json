@@ -1,263 +1,173 @@
 {
-    "workbench.iconTheme": "vscode-icons",
-    "files.autoSave": "afterDelay",
-    "editor.fontFamily": "'Cascadia Code'",
-    "editor.fontSize": 20,
-    "terminal.integrated.fontSize": 20,
-    "vsicons.dontShowNewVersionMessage": true,
-    "gitlens.views.commitDetails.files.layout": "tree",
-    "security.workspace.trust.untrustedFiles": "open",
-    "terminal.integrated.fontFamily": "'Hack NF'",
-    "[python]": {
-        "editor.formatOnType": true
+  "workbench.colorTheme": "Default Light Modern",
+  "redhat.telemetry.enabled": false,
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "xml.server.vmargs": "-Xmx128M",
+  "xml.symbols.maxItemsComputed": 50000,
+  "files.autoSave": "afterDelay",
+  "[csharp]": {
+    "editor.defaultFormatter": "csharpier.csharpier-vscode"
+  },
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingComments": "always",
+  "editor.autoClosingQuotes": "never",
+  "vim.leader": " ",
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "vim.vimrc.enable": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["s-Tab"],
+      "commands": ["workbench.action.previousEditor"]
     },
-    "workbench.editorAssociations": {
-        "*.bmp": "imagePreview.previewEditor"
+    {
+      "before": ["Tab"],
+      "commands": ["workbench.action.nextEditor"]
     },
-    "cSpell.userWords": [
-        "hamkalo",
-        "numab",
-        "taras"
-    ],
-    "arduino.useArduinoCli": true,
-    "[c]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools"
-    },
-    "prettier.tabWidth": 4,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "errorLens.exclude": [
-        "\"GAMEOVER\": Unknown word\\."
-    ],
-    "workbench.colorTheme": "Atom One Dark",
-    "redhat.telemetry.enabled": false,
-    "git.openRepositoryInParentFolders": "always",
-    "errorLens.enabledDiagnosticLevels": [
-        "error",
-        "info",
-        "warning"
-    ],
-    "[java]": {
-        "editor.defaultFormatter": "redhat.java"
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
     },
 
-    "java.inlayHints.parameterNames.enabled": "none",
-    "editor.autoClosingBrackets": "never",
-    "errorLens.enabled": false,
-    "java.project.outputPath": "/out",
-    // "java.project.referencedLibraries": [
-    //     "C:\\Program Files\\Java\\javafx-sdk-20.0.1\\lib\\*.jar"
-    // ],
-    
-    "editor.autoClosingQuotes": "never",
-    "editor.minimap.autohide": true,
-    "editor.rulers": [
-        100
-    ],
-    "window.openFoldersInNewWindow": "on",
-    "vim.leader": " ",
-    "vim.incsearch": true,
-    "vim.ignorecase": true,
-    "editor.lineNumbers": "relative",
-    "vim.easymotion": true,
-    "vim.useCtrlKeys": true,
-    //   "<S-Tab>": true,
-    //   "<C-2>": false,
-    //   "<C-S-2>": false,
-    //   "<C-6>": false,
-    //   "<C-S-6>": false,
-    //   "<C-;>": true,
-    //   "<C-S-;>": true,
-    //   "<C-A>": false,
-    //   "<C-B>": false,
-    //   "<C-C>": false,
-    //   "<C-D>": true,
-    //   "<C-E>": false,
-    //   "<C-F>": false,
-    //   "<C-G>": true,
-    //   "<C-H>": true,
-    //   "<C-I>": true,
-    //   "<C-K>": false,
-    //   "<C-L>": true,
-    //   "<C-M>": true,
-    //   "<C-N>": true,
-    //   "<C-O>": true,
-    //   "<C-P>": true,
-    //   "<C-Q>": false,
-    //   "<C-R>": true,
-    //   "<C-S>": true,
-    //   "<C-T>": false,
-    //   "<C-U>": true,
-    //   "<C-V>": false,
-    //   "<C-W>": true,
-    //   "<C-X>": true,
-    //   "<C-[>": true,
-    //   "<C-\\>": true,
-    //   "<C-]>": true,
-    //   "<C-d>": true,
-    //   "<C-u>": true,
-    //   "<C-s>": false,
-    //   "<C-z>": false,
-    //   "C-r": true,
-    // },
-    "vim.overrideCopy": true,
-    "vim.vimrc.enable": true,
-    "vim.vimrc.path": "c:\\Users\\taras\\.vimrc",
-    "vim.useSystemClipboard": true,
+    {
+      "before": ["<leader>", "r", "n"],
+      "commands": ["editor.action.rename"]
+    },
 
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": ["<leader>", "e"],
-            "commands": ["editor.action.marker.nextInFiles"]
-        },
-        {
-            "before": ["s-Tab"],
-            "commands": ["workbench.action.previousEditor"]
-        },
-        {
-            "before": ["Tab"],
-            "commands": ["workbench.action.nextEditor"]
-        },{
-            "before": ["<leader>", "f", "f"],
-            "commands": ["workbench.action.quickOpen"]
-        },
-        {
-            "before": ["<leader>", "f", "r"],
-            "commands": ["workbench.action.openRecent"]
-        },
-        {
-            "before": ["<leader>", "r", "n"],
-            "commands": ["editor.action.rename"]
-        },
-        {
-            "before": ["<leader>", "v"],
-            "commands": ["extension.vim_action.visualBlock"]
-        },
-        {
-            "before": ["c-]"],
-            "commands": ["workbench.action.decreaseViewSize"]
-        },
-        {
-            "before": ["c-["],
-            "commands": ["workbench.action.increaseViewSize"]
-        },
-        {
-            "before": ["<leader>", ","],
-            "commands": ["workbench.action.moveEditorToLeftGroup"]
-        },
-        {
-            "before": ["<leader>", "."],
-            "commands": ["workbench.action.moveEditorToRightGroup"]
-        },
-        {
-            "before": ["<leader>", "b"],
-            "commands": ["editor.debug.action.toggleBreakpoint"]
-        },
-        {
-            "before": ["<leader>", "t"],
-            "commands": ["workbench.action.terminal.toggleTerminal"]
-        },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
 
-    ],
+    {
+      "before": ["<leader>", "l", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
 
-    "vim.autoindent": true,
-    "window.zoomLevel": -2,
-
-  //   {
-  //     "before": ["<leader>", "f", "r"],
-  //     "commands": ["extension.vim_action", "RecentFiles"]
-  //   },
-  //   {
-  //     "before": ["<leader>", "f", "a"],
-  //     "commands": ["extension.vim_action", "GotoAction"]
-  //   },
-  //   {
-  //     "before": ["<leader>", "r", "n"],
-  //     "commands": ["extension.vim_action", "RenameElement"]
-  //   },
-  //   {
-  //     "before": ["<leader>", "t"],
-  //     "commands": ["extension.vim_action", "ActivateTerminalToolWindow"]
-  //   },
-  //   {
-  //     "before": ["<leader>", "b"],
-  //     "commands": ["extension.vim_action", "ToggleLineBreakpoint"]
-  //   },
-  //   {
-  //     "before": ["<leader>", "v"],
-  //     "commands": ["extension.vim_action", "visualBlock"]
-  //   },
-  //   {
-  //     "before": ["<leader>", "n"],
-  //     "commands": ["extension.vim_action", "Generate"]
-  //   },
-  //   {
-  //     "before": ["<leader>", "m"],
-  //     "commands": ["extension.vim_action", "Git.Menu"]
-  //   },
-  //   {
-  //     "before": ["<leader>", "/"],
-  //     "commands": ["extension.vim_action", "ShowErrorDescription"]
-  //   },
-  //   {
-  //     "before": ["<leader>", "e"],
-  //     "commands": ["extension.vim_action", "GotoNextError"]
-  //   },
-  //   {
-  //     "before": ["<leader>", "."],
-  //     "commands": ["extension.vim_action", "TabShiftActions.ShiftRight"]
-  //   },
-  //   {
-  //     "before": ["<leader>", ","],
-  //     "commands": ["extension.vim_action", "TabShiftActions.ShiftLeft"]
-  //   },
-  //   {
-  //     "before": ["<c-[>"],
-  //     "commands": ["extension.vim_action", "TabShiftActions.StretchLeft"]
-  //   },
-  //   {
-  //     "before": ["<c-]>"],
-  //     "commands": ["extension.vim_action", "TabShiftActions.StretchRight"]
-  //   },
-  //   {
-  //     "before": ["<s-Tab>"],
-  //     "commands": ["extension.vim_action", "PreviousTab"]
-  //   },
-  //   {
-  //     "before": ["<Tab>"],
-  //     "commands": ["extension.vim_action", "NextTab"]
-  //   },
-  //   {
-  //     "before": ["<C-u>"],
-  //     "commands": ["extension.vim_action", "ScrollUp"]
-  //   },
-  //   {
-  //     "before": ["<C-d>"],
-  //     "commands": ["extension.vim_action", "ScrollDown"]
-  //   },
-  //   {
-  //     "before": ["n"],
-  //     "commands": ["extension.vim_action", "FindNext"]
-  //   },
-  //   {
-  //     "before": ["N"],
-  //     "commands": ["extension.vim_action", "FindPrevious"]
-  //   },
-  //   {
-  //     "before": ["g", "D"],
-  //     "commands": ["extension.vim_action", "GotoTypeDeclaration"]
-  //   },
-  //   {
-  //     "before": ["g", "d"],
-  //     "commands": ["extension.vim_action", "GotoDeclaration"]
-  //   },
-  //   {
-  //     "before": ["g", "i"],
-  //     "commands": ["extension.vim_action", "GotoImplementation"]
-  //   },
-  //   {
-  //     "before": ["g", "s"],
-  //     "commands": ["extension.vim_action", "GotoSuperMethod"]
-  //   }
-  // ],
-
+    {
+      "before": ["<leader>", "l", "i"],
+      "commands": ["editor.action.organizeImports"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<C-w>"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "r", "m"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    }
+  ],
+  "git.confirmSync": false,
+  "editor.snippets.codeActions.enabled": false,
+  "editor.codeActionWidget.showHeaders": false,
+  "dotnet.codeLens.enableReferencesCodeLens": false,
+  "dotnet.codeLens.enableTestsCodeLens": false,
+  "editor.codeLens": false,
+  "window.zoomLevel": 1,
+  "vim.autoindent": true
 }
+
+//   {
+//     "before": ["<leader>", "f", "r"],
+//     "commands": ["extension.vim_action", "RecentFiles"]
+//   },
+//   {
+//     "before": ["<leader>", "f", "a"],
+//     "commands": ["extension.vim_action", "GotoAction"]
+//   },
+//   {
+//     "before": ["<leader>", "r", "n"],
+//     "commands": ["extension.vim_action", "RenameElement"]
+//   },
+//   {
+//     "before": ["<leader>", "t"],
+//     "commands": ["extension.vim_action", "ActivateTerminalToolWindow"]
+//   },
+//   {
+//     "before": ["<leader>", "b"],
+//     "commands": ["extension.vim_action", "ToggleLineBreakpoint"]
+//   },
+//   {
+//     "before": ["<leader>", "v"],
+//     "commands": ["extension.vim_action", "visualBlock"]
+//   },
+//   {
+//     "before": ["<leader>", "n"],
+//     "commands": ["extension.vim_action", "Generate"]
+//   },
+//   {
+//     "before": ["<leader>", "m"],
+//     "commands": ["extension.vim_action", "Git.Menu"]
+//   },
+//   {
+//     "before": ["<leader>", "/"],
+//     "commands": ["extension.vim_action", "ShowErrorDescription"]
+//   },
+//   {
+//     "before": ["<leader>", "e"],
+//     "commands": ["extension.vim_action", "GotoNextError"]
+//   },
+//   {
+//     "before": ["<leader>", "."],
+//     "commands": ["extension.vim_action", "TabShiftActions.ShiftRight"]
+//   },
+//   {
+//     "before": ["<leader>", ","],
+//     "commands": ["extension.vim_action", "TabShiftActions.ShiftLeft"]
+//   },
+//   {
+//     "before": ["<c-[>"],
+//     "commands": ["extension.vim_action", "TabShiftActions.StretchLeft"]
+//   },
+//   {
+//     "before": ["<c-]>"],
+//     "commands": ["extension.vim_action", "TabShiftActions.StretchRight"]
+//   },
+//   {
+//     "before": ["<s-Tab>"],
+//     "commands": ["extension.vim_action", "PreviousTab"]
+//   },
+//   {
+//     "before": ["<Tab>"],
+//     "commands": ["extension.vim_action", "NextTab"]
+//   },
+//   {
+//     "before": ["<C-u>"],
+//     "commands": ["extension.vim_action", "ScrollUp"]
+//   },
+//   {
+//     "before": ["<C-d>"],
+//     "commands": ["extension.vim_action", "ScrollDown"]
+//   },
+//   {
+//     "before": ["n"],
+//     "commands": ["extension.vim_action", "FindNext"]
+//   },
+//   {
+//     "before": ["N"],
+//     "commands": ["extension.vim_action", "FindPrevious"]
+//   },
+//   {
+//     "before": ["g", "D"],
+//     "commands": ["extension.vim_action", "GotoTypeDeclaration"]
+//   },
+//   {
+//     "before": ["g", "d"],
+//     "commands": ["extension.vim_action", "GotoDeclaration"]
+//   },
+//   {
+//     "before": ["g", "i"],
+//     "commands": ["extension.vim_action", "GotoImplementation"]
+//   },
+//   {
+//     "before": ["g", "s"],
+//     "commands": ["extension.vim_action", "GotoSuperMethod"]
+//   }
+// ],
