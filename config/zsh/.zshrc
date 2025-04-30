@@ -19,10 +19,22 @@ alias sapu="sudo apt update -y;  sudo apt upgrade -y; exit"
 
 alias cd="z"
 
-### ---- Env -------------------------------------
-# export PATH="/home/taras/miniconda3/bin:$PATH"  # commented out by conda initialize
-export PATH="/home/taras/.local/bin:$PATH"
+alias pyshell="source $HOME/.conda.zshrc"
+alias py="python3"
+alias picopy="micropython"
+alias pi-sed-out="sed -n '/MPY: soft reboot/,/MicroPython/p'"
+alias pi-clear="rshell rm -rf '/pyboard/*'"
+alias pi-clean-run="pi-clear; pico-run"
 
+alias webshell="source $HOME/.web.zshrc"
+
+alias files="nautilus ."
+### ---- Env -------------------------------------
+# export PATH="$HOME/Software/miniconda3/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize
+
+export MOZ_ENABLE_WAYLAND=0
+export PATH="$HOME/.local/bin:$PATH"
+export EDITOR=nvim
 export GIT_EDITOR=nvim
 export CC=gcc
 export LDLIBS="-lm"
@@ -47,9 +59,6 @@ source $ZSH/custom/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plu
 source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=($ZSH/custom/plugins/zsh-completions/src $fpath)
 
-### -- Apps setup
-source $HOME/.cargo/env
-
 ### --- Spaceship Config -----------------------------------
 SPACESHIP_PROMPT_ORDER=(
   # user          # Username section
@@ -73,8 +82,17 @@ SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CONDA_SHOW=true
 
 ### --- Binding -----------------------------------
-bindkey '' autosuggest-accept
+bindkey -v
 
+function vi-yank-xclip {
+    zle vi-yank
+   echo "$CUTBUFFER" | wl-copy
+}
+
+zle -N vi-yank-xclip
+bindkey -M vicmd 'y' vi-yank-xclip
+
+bindkey '' autosuggest-accept
 ### --- Functions -----------------------------------
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -86,25 +104,12 @@ function y() {
 }
 
 ### --- Init -----------------------------------
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/taras/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/taras/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/taras/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/taras/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 eval "$(zoxide init zsh)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
