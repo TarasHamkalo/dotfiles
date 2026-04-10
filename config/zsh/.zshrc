@@ -11,6 +11,8 @@ fi
 alias aigpu="sudo nvidia-smi -lmc 256,256; sudo nvidia-smi -lgc 256,256;"
 alias adgpu="sudo nvidia-smi -lmc 1024,1024; sudo nvidia-smi -lgc 1024,1024;"
 
+alias source_mpi="source /etc/profile.d/modules.sh; module load mpi/openmpi-x86_64"
+
 alias open="xdg-open"
 
 alias v="nvim"
@@ -43,6 +45,8 @@ alias webshell="source $HOME/.web.zshrc"
 alias files="nautilus ."
 ### ---- Env -------------------------------------
 # export PATH="$HOME/Software/miniconda3/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize
+export GOPATH=$HOME/go
+export PATH="$PATH:$HOME/go/bin"
 
 export MOZ_ENABLE_WAYLAND=0
 export PATH="$HOME/.local/bin:$PATH"

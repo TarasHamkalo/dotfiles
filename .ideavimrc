@@ -1,3 +1,5 @@
+set notimeout
+
 set idearefactormode=keep
 set ideajoin
 set surround
@@ -39,12 +41,16 @@ map <leader>de :action EvaluateExpression<CR>
 nmap <leader>li :action OptimizeImports<CR>
 nmap <leader>lf :action ReformatCode<CR>
 nmap <leader>ca :action ShowIntentionActions<CR>
+
 nmap <leader>rm :action CloseAllEditorsButActive<CR>
 nmap <leader>s :action Stop<CR>
 nmap <leader>db :action ToggleLineBreakpoint<CR>
 nmap <leader>g :action Generate<CR>
 nmap <leader>m :action Git.Menu<CR>
 nmap <leader>/ :action ShowErrorDescription<CR>
+
+nmap <leader>le :action Javascript.Linters.EsLint.Fix<CR>
+" nmap <leader>le :action Typescript.Linters.EsLint.Fix<CR>
 " nmap <leader>. :action TabShiftActions.ShiftRight<CR>
 " nmap <leader>, :action TabShiftActions.ShiftLeft<CR>
 
