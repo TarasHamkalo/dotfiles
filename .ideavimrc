@@ -10,7 +10,7 @@ set showmode
 "set ReplaceWithRegister
 set clipboard=unnamedplus
 set nocompatible
-set scrolloff=10
+"set scrolloff=10
 set number
 set relativenumber
 set mousehide
@@ -61,16 +61,17 @@ nmap sv :vsplit<CR>
 
 " Splits width
 " decrement
-nmap <C-h> :action StretchSplitToLeft<CR>
+nmap <C-A-h> :action StretchSplitToLeft<CR>
 " increment
-nmap <C-l> :action StretchSplitToRight<CR>
+nmap <C-A-l> :action StretchSplitToRight<CR>
 " Split height
-nmap <C-k> :action StretchSplitToTop<CR>
-nmap <C-j> :action StretchSplitToBottom<CR>
-nmap sh <c-w>h
-nmap sj <c-w>j
-nmap sk <c-w>k
-nmap sl <c-w>l
+nmap <C-A-k> :action StretchSplitToTop<CR>
+nmap <C-A-j> :action StretchSplitToBottom<CR>
+
+"nmap sh <c-w>h
+"nmap sj <c-w>j
+"nmap sk <c-w>k
+"nmap sl <c-w>l
 
 nmap [d :action GotoPreviousError<CR>
 nmap ]d :action GotoNextError<CR>
@@ -167,3 +168,8 @@ sethandler <C-X> a:vim
 sethandler <C-[> a:vim
 sethandler <C-\> a:vim
 sethandler <C-]> a:vim
+
+sethandler <C-A-H> a:vim
+sethandler <C-A-I> a:vim
+sethandler <C-A-K> a:vim
+sethandler <C-A-J> a:vim
